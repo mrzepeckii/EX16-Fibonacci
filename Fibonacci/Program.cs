@@ -8,10 +8,15 @@ namespace Fibonacci
         static void Main(string[] args)
         {
             Console.WriteLine("Type the number of Fibonacci elements ");
-            Int32.TryParse(Console.ReadLine(), out int n);
-            for (int i = 0; i < n; i++)
+            
+            while (true)
             {
-                Console.WriteLine(Fibo(i));
+                if (Int32.TryParse(Console.ReadLine(), out int n))
+                {
+                    for (int i = 0; i < n; i++)
+                        Console.WriteLine(Fibo(i));
+                    break;
+                }
             }
         }
 
